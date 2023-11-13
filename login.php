@@ -1,6 +1,6 @@
 <?php
 session_start();
-// retrieve
+// retrieve from login_form.php
 $acc=$_POST['acc'];
 $pw=$_POST['pw'];
 

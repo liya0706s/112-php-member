@@ -13,31 +13,31 @@
 <body>
     <h2>會員註冊</h2>
     <form action="./add_user.php" method="post">
-        <div class="col-g3 align-items-center">
+        <div class="col-4 m-auto">
             <div class="input-group my-1">
                 <label class="col-4 input-group-text">帳號:</label>
                 <input class="form-control" type="text" name="acc" id="acc">
             </div>
-            <div class="col-auto">
-            <label for="">密碼:</label>
-            <input type="password" name="pw" id="pw">
+            <div class="input-group my-1">
+                <label class="col-4 input-group-text" for="">密碼:</label>
+                <input class="form-control" type="password" name="pw" id="pw">
             </div>
 
-            <div class="col-auto">
-                <label for="">姓名:</label>
-                <input type="text" name="name" id="name">
+            <div class="input-group my-1">
+                <label class="col-4 input-group-text" for="">姓名:</label>
+                <input class="form-control" type="text" name="name" id="name">
+            </div>
+            <div class="input-group my-1">
+                <label class="col-4 input-group-text" for="">電子郵件:</label>
+                <input class="form-control" type="text" name="email" id="email">
+            </div>
+            <div class="input-group my-1">
+                <label class="col-4 input-group-text">居住地</label>
+                <input class="form-control" type="text" name="address" id="address">
             </div>
             <div>
-                <label for="">電子郵件:</label>
-                <input type="text" name="email" id="email">
-            </div>
-            <div>
-                <label>居住地</label>
-                <input type="text" name="address" id="address">
-            </div>
-            <div>
-                <input type="submit" value="送出">
-                <input type="reset" value="重置">
+                <input class="btn btn-primary mx-2" type="submit" value="送出">
+                <input class="btn btn-warning mx-2" type="reset" value="重置">
             </div>
         </div>
     </form>

@@ -16,8 +16,8 @@
         <h1>哈哈購物商城</h1>
         <header class="nav">
             <div class="nav-item col-4"></div>
-            <div class="nav-item col-4 justify-content-evenly">
-                <ul>
+            <div class="nav-item col-4">
+                <ul class="d-flex justify-content-evenly">
                     <li>1</li>
                     <li>2</li>
                     <li>3</li>
@@ -31,8 +31,8 @@
                     echo "<a href='member.php' class='btn btn-success mx-2'>會員中心</a>";
                 }else{
                     ?>
-            <a href="reg.php">註冊</a>
-            <a href="login.php">登入</a>
+            <a href="reg.php" class="btn btn-primary mx-2">註冊</a>
+            <a href="login.php" class="btn btn-success mx-2">登入</a>
         <?php
         }
         ?>

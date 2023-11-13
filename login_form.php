@@ -11,34 +11,34 @@
 </head>
 
 <body>
-
-<div class="container">
-    <div class="w-50 mx-auto">
-        <h2>會員登入</h2>
-        <form action="login.php" method="post">
-            <?php
-                if(isset($_GET['error'])){
+    <div class="container">
+        <div class="w-50 mx-auto">
+            <h2>會員登入</h2>
+            <form action="login.php" method="post">
+                <?php
+                // 如果登入失敗，得到變數GET值是error，會顯示紅色錯誤訊息
+                if (isset($_GET['error'])) {
                     echo "<span style='color:red'>";
                     echo $_GET['error'];
                     echo "</span>";
                 }
+                ?>
 
-            ?>
+                <div class="row col-8 my-4">
+                    <label for="" class="col-3">帳號:</label>
+                    <input type="text" name="acc" id="acc" class="col-9 rounded border-0 border-bottom border-1">
+                </div>
+                <div class="row col-8 my-4">
+                    <label for="" class="col-3">密碼:</label>
+                    <input type="password" name="pw" id="pw" class="col-9 rounded border-0 border-bottom border-1">
+                </div>
+                <div class="text-center">
+                    <input type="submit" value="送出" class="btn btn-primary mx-2">
+                    <input type="submit" value="重置" class="btn btn-warning mx-2">
+                </div>
+            </form>
+        </div>
 
-
-            <div class="row col-8 my-4">
-                <label for="" class="col-3">帳號:</label>
-                <input type="text" name="acc" id="acc" class="input col-9">
-            </div>
-            <div><label for="" class="col-3">密碼:</label>
-                <input type="password" name="pw" id="pw" class="input col-9">
-            </div>
-            <div class="text-center">
-                <input type="submit" value="送出" class="btn btn-primary mx-2">
-                <input type="submit" value="重置" class="btn btn-danger mx-2">
-            </div>
-        </form></div>
-        
     </div>
 
 </body>
