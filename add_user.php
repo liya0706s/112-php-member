@@ -9,5 +9,5 @@ values('{$_POST['acc']}','{$_POST['pw']}',
 
 $pdo->exec($sql);
 
-// 導向
-header();
+// 導向的位置
+header("Location:index.php");
