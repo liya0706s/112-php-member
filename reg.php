@@ -8,7 +8,7 @@
 <body>
     <form action="">
         <div>
-            
+            <label>居住地</label>
         </div>
     </form>
 </body>
