@@ -16,6 +16,16 @@
     <div class="w-50 mx-auto">
         <h2>會員登入</h2>
         <form action="login.php" method="post">
+            <?php
+                if(isset($_GET['error'])){
+                    echo "<span style='color:red'>";
+                    echo $_GET['error'];
+                    echo "</span>";
+                }
+
+            ?>
+
+
             <div class="row col-8 my-4">
                 <label for="" class="col-3">帳號:</label>
                 <input type="text" name="acc" id="acc" class="input col-9">
