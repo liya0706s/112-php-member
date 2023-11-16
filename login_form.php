@@ -16,10 +16,11 @@
             <h2>會員登入</h2>
             <form action="login.php" method="post">
                 <?php
-                // 如果登入失敗，得到變數GET值是error，會顯示紅色錯誤訊息
+                // 從login.php上得到
+                // 如果登入失敗，得到變數GET值是error，會顯示紅色的錯誤訊息
                 if (isset($_GET['error'])) {
                     echo "<span style='color:red'>";
-                    echo $_GET['error'];
+                    echo $_GET['error']; 
                     echo "</span>";
                 }
                 ?>

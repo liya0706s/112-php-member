@@ -11,12 +11,14 @@
 </head>
 
 <body>
-    <h2>會員註冊</h2>
+    <a href="./index.php">HOME</a>
+    <h2 class="text-center mt-3 mb-3">會員註冊</h2>
     <form action="./add_user.php" method="post">
         <div class="col-4 m-auto">
             <div class="input-group my-1">
                 <label class="col-4 input-group-text">帳號:</label>
                 <input class="form-control" type="text" name="acc" id="acc">
+            <!-- name="acc" 就是form表單到add_user.php 傳值 $_POST['acc'] -->
             </div>
             <div class="input-group my-1">
                 <label class="col-4 input-group-text" for="">密碼:</label>
@@ -35,7 +37,7 @@
                 <label class="col-4 input-group-text">居住地</label>
                 <input class="form-control" type="text" name="address" id="address">
             </div>
-            <div>
+            <div class="text-center mt-3">
                 <input class="btn btn-primary mx-2" type="submit" value="送出">
                 <input class="btn btn-warning mx-2" type="reset" value="重置">
             </div>

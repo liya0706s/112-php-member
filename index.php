@@ -23,20 +23,24 @@
                     <li>3</li>
                 </ul>
             </div>
-        <div class="nav-item col-4">
-            <?php
-                if(isset($_SESSION['user'])){
-                    echo "歡迎光臨 ".$_SESSION['user'];
+            <div class="nav-item col-4">
+
+                <?php
+                if (isset($_SESSION['user'])) {
+                    // 登入成功，歡迎光臨 登入者帳號
+                    echo "歡迎光臨 " . $_SESSION['user'];
+                    // 登入成功的完整按鈕選項還有，登出和會員資料
                     echo "<a href='logout.php' class='btn btn-info mx-2'>登出</a>";
                     echo "<a href='member.php' class='btn btn-success mx-2'>會員中心</a>";
-                }else{
-                    ?>
-            <a href="reg.php" class="btn btn-primary mx-2">註冊</a>
-            <a href="login.php" class="btn btn-success mx-2">登入</a>
-        <?php
-        }
-        ?>
-        </div>
+                } else {
+                    // 如果不是登入成功，會看到 註冊 跟 登入 按鈕
+                ?>
+                    <a href="reg.php" class="btn btn-primary mx-2">註冊</a>
+                    <a href="login_form.php" class="btn btn-success mx-2">登入</a>                
+                <?php
+                }
+                ?>
+            </div>
         </header>
     </div>
 </body>
