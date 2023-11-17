@@ -80,6 +80,7 @@ include_once "./include/connect.php";
                 </div>
                 <div class="input-group my-1">
                     <label class="col-4 input-group-text" for="">密碼:</label>
+                    <!-- label後面要有for接id -->
                     <input class="form-control" type="password" name="pw" id="pw" value="<?= $user['pw']; ?>">
                 </div>
 
@@ -103,9 +104,12 @@ include_once "./include/connect.php";
                     <!-- submit一定觸發form表單觸發value傳送 -->
                     <input class="btn btn-warning mx-2" type="reset" value="重置">
                     <!-- reset 重置或還原，非清空 -->
-                    <input class="btn btn-danger mx-2" type="button" value="讓我消失吧">
+                    <input class="btn btn-danger mx-2" type="button" value="讓我消失吧" 
+                    onclick="location.href='del_user.php?id=<?=$user['id'];?>'">
                     <!-- 比較:屬性button按鈕外型沒有功能，button標籤在form表單裡預設是submit -->
                     <!-- 表單裡面不能包表單，所以把消失表單post的按鈕放在這個表外面，還要unset session -->
+
+                    <!-- 使用input的button屬性，透過onclick事件觸發，javascript指令.href，完成刪除使用者，網址方式接收是GET -->
                 </div>
             </div>
         </form>
