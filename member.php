@@ -75,7 +75,7 @@ include_once "./include/connect.php";
                     <label class="col-4 input-group-text">帳號:</label>
                     <input class="form-control" type="text" name="acc" id="acc" value="<?= $user['acc']; ?>">
                     <!-- name="acc" 就是form表單到add_user.php 傳值 $_POST['acc'] -->
-                    <!-- 小於問號等於php的短寫法，用於放一個變數  -->
+                    <!-- input屬性value等於，小於問號等於php的短寫法，放變數$user的資料(登入時PDO查詢取得的資料)  -->
                     <!-- user所有欄位資料，會顯示在input上，可以再做修改刪除 -->
                 </div>
                 <div class="input-group my-1">
@@ -103,7 +103,7 @@ include_once "./include/connect.php";
                     <input class="btn btn-primary mx-2" type="submit" value="更新">
                     <!-- submit一定觸發form表單觸發value傳送 -->
                     <input class="btn btn-warning mx-2" type="reset" value="重置">
-                    <!-- reset 重置或還原，非清空 -->
+                    <!-- reset 重置或"還原"，非清空 -->
                     <input class="btn btn-danger mx-2" type="button" value="讓我消失吧" 
                     onclick="location.href='del_user.php?id=<?=$user['id'];?>'">
                     <!-- 比較:屬性button按鈕外型沒有功能，button標籤在form表單裡預設是submit -->

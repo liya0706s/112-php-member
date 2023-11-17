@@ -16,7 +16,7 @@ where `id`='{$_POST['id']}' ";
 if($pdo->exec($sql)>0){
     $_SESSION['msg']="更新成功!";
 }else{
-    $_SESSION['msg']="資料無異動:P";
+    $_SESSION['msg']="資料無異動";
 }
 // 判斷為1代表有更新資訊
 
@@ -24,6 +24,5 @@ if($pdo->exec($sql)>0){
 // 印出更新後的sql資料不可能給client看
 // 也可以回db看，但是client看不到
 
-
 // 更新完回會員中心
-// header();
+header("location:member.php");

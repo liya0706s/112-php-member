@@ -16,7 +16,7 @@ $pw=$_POST['pw'];
 $sql="select count(*) from users where `acc`='$acc' && `pw`='$pw'";
 
 // 輸入帳密，會拿到一筆資料fetch()
-// 用變數$user來定義，PDO查詢和取得的資料
+// PDO查詢和取得的資料，放到變數$user裡
 // $user=$pdo->query($sql)->fetch();
 // fetchColumn()返回該筆資料中指定欄位的資料
 $user=$pdo->query($sql)->fetchColumn();
