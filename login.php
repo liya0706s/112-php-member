@@ -1,11 +1,13 @@
 <?php
-session_start();
+// 放在最前面
+include_once "./include/connect.php";
+
 // retrieve from login_form.php
 $acc=$_POST['acc'];
 $pw=$_POST['pw'];
 
-$dsn="mysql:host=localhost;charset=utf8;dbname=member";
-$pdo=new PDO($dsn,'root','');
+// $dsn="mysql:host=localhost;charset=utf8;dbname=member";
+// $pdo=new PDO($dsn,'root','');
 
 // 要確認輸入的帳號密碼在資料庫(sql)裡面有沒有
 // sql變數，選擇"所有的資料欄位"是&&符合輸入的帳號密碼$acc和$pw
@@ -25,7 +27,7 @@ $user=$pdo->query($sql)->fetchColumn();
 // 變數user裡的acc和pw欄位，是否等於輸入的帳密
 // if($user['acc']==$acc && $user['pw']==$pw){
 if($user==1){
-    // 登入成功，資料會記到SESSION裡面，中括號裡的自己隨便命名
+    // 登入成功，資料會記到SESSION裡面，中括號裡的自己隨便命名大便
     // 把acc帳號放到SESSION裡面(右邊賦予給左邊)
     $_SESSION['user']=$acc;
     header("location:index.php");

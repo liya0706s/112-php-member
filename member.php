@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php 
+include_once "./include/connect.php";
+// connect裡面已包含session_start，不要重複啟用會有notice
+// session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,8 +46,9 @@
 
         <!-- 拿資料庫使用者資料 -->
         <?php
-        $dsn = "mysql:host=localhost;charset=utf8;dbname=member";
-        $pdo = new PDO($dsn, 'root', '');
+        // $dsn = "mysql:host=localhost;charset=utf8;dbname=member";
+        // $pdo = new PDO($dsn, 'root', '');
+
         // 登入時的SQL語法
         // 確定註冊時的帳號是不能重複的
         // 會員中心不是透過表單傳帳號過來的，是從資料庫撈資料比較，登入後登入者帳號儲存在SESSION變數裡
