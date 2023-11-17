@@ -6,7 +6,11 @@ include_once "./include/connect.php";
 
 // 格式先打好，再輸入值
 $sql="update `users` 
-set `acc`='{$_POST['acc']}',`pw`='{$_POST['pw']}', `name`='{$_POST['name']}', `email`='{$_POST['email']}',`address`='{$_POST['address']}' 
+set `acc`='{$_POST['acc']}',
+    `pw`='{$_POST['pw']}', 
+    `name`='{$_POST['name']}', 
+    `email`='{$_POST['email']}',
+    `address`='{$_POST['address']}' 
 where `id`='{$_POST['id']}' ";
 
 if($pdo->exec($sql)>0){

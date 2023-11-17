@@ -107,7 +107,7 @@ include_once "./include/connect.php";
                     <input class="btn btn-danger mx-2" type="button" value="讓我消失吧" 
                     onclick="location.href='del_user.php?id=<?=$user['id'];?>'">
                     <!-- 比較:屬性button按鈕外型沒有功能，button標籤在form表單裡預設是submit -->
-                    <!-- 表單裡面不能包表單，所以把消失表單post的按鈕放在這個表外面，還要unset session -->
+                    <!-- 表單裡面不能包表單，所以把消失表單POST的按鈕放在這個表外面，用GET/POST有?id=xx帶到del_user -->
 
                     <!-- 使用input的button屬性，透過onclick事件觸發，javascript指令.href，完成刪除使用者，網址方式接收是GET -->
                 </div>
