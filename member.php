@@ -44,15 +44,16 @@ include_once "./include/connect.php";
     <div class="container">
         <h3 class="text-center">使用者資料</h3>
 
-        <!-- 拿資料庫使用者資料 -->
+        <!-- 拿update.php資料庫使用者資料 -->
+        <!-- $_SESSION['msg']只是當下更新暫存的資料，更新完要刪除SESSION -->
         <?php
-        if(isset($_SESSION['msg'])){
-            echo "<div class='alert alert-warning' role='alert'>";
+        if (isset($_SESSION['msg'])) {
+            echo "<div class='alert alert-warning text-center col-6 m-auto'>";
             echo $_SESSION['msg'];
             unset($_SESSION['msg']);
             echo "</div>";
         }
-        
+
 
         // 登入時的SQL語法
         // 確定註冊時的帳號是不能重複的
@@ -62,10 +63,10 @@ include_once "./include/connect.php";
         $user = $pdo->query($sql)->fetch();
         ?>
 
-<!-- 顯示 資料庫中撈到登入者資料的陣列，有id -->
-<pre>
-<?=print_r($user);?>
-</pre>
+        <!-- 顯示 資料庫中撈到登入者資料的陣列，有id -->
+        <!-- <pre> -->
+        <!-- php短程式 小於問號等於 print_r($user); 問號大於 -->
+        <!-- </pre> -->
 
 
         <!-- 整段 會員註冊 的表單 -->
@@ -100,14 +101,13 @@ include_once "./include/connect.php";
                     <input class="form-control" type="text" name="address" id="address" value="<?= $user['address']; ?>">
                 </div>
                 <div class="text-center mt-3">
-                    <input type="hidden" name="id" value="<?= $user['id']; ?>">
+                    <input type="hidden" name="id" value="<?=$user['id'];?>">
                     <!-- hidden屬性代表input標籤不會顯示在畫面上，把id值帶過來，知道是要修改的該筆 -->
                     <input class="btn btn-primary mx-2" type="submit" value="更新">
                     <!-- submit一定觸發form表單觸發value傳送 -->
                     <input class="btn btn-warning mx-2" type="reset" value="重置">
                     <!-- reset恢復原狀或"還原"，非清空 -->
-                    <input class="btn btn-danger mx-2" type="button" value="讓我消失吧" 
-                    onclick="location.href='del_user.php?id=<?=$user['id'];?>'">
+                    <input class="btn btn-danger mx-2" type="button" value="讓我消失吧" onclick="location.href='del_user.php?id=<?= $user['id']; ?>'">
                     <!-- 比較:屬性button只是按鈕外型，沒有功能；在form表單裡放button標籤，預設是submit -->
                     <!-- 表單裡面不能包表單，所以把消失表單POST的按鈕放在這個表外面，用GET/POST有?id=xx帶到del_user -->
 
