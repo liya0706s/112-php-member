@@ -29,6 +29,7 @@ $user=$pdo->query($sql)->fetchColumn();
 if($user==1){
     // 登入成功，資料會記到SESSION裡面，中括號裡的自己隨便命名大便
     // 把acc帳號放到SESSION裡面(右邊賦予給左邊)
+    // 到會員資料那邊會繼續使用 $_SESSION['user'] 變數
     $_SESSION['user']=$acc;
     header("location:index.php");
 }else{

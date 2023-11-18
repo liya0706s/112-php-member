@@ -5,7 +5,7 @@
 include_once "./include/connect.php";
 $acc=htmlspecialchars(trim($_POST['acc']));
 
-// 用sql語法，新增reg.php form的資料，用pdo執行語句(連接數據庫的使用接口)
+// 用sql語法，新增reg.php form的POST資料，用pdo執行語句(連接數據庫的使用接口)
 $sql="insert into `users`(`acc`,`pw`,`name`,`email`,`address`)
                     values('{$_POST['acc']}','{$_POST['pw']}','{$_POST['name']}','{$_POST['email']}','{$_POST['address']}')";
 
