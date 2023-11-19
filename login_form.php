@@ -21,6 +21,7 @@
                 if (isset($_GET['error'])) {
                     echo "<span style='color:red'>";
                     echo $_GET['error']; 
+                    unset($_GET['error']);
                     echo "</span>";
                 }
                 ?>
