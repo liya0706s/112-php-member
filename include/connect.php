@@ -1,7 +1,7 @@
 <?php
 // 資料庫連線
-$dsn="mysql:host=localhost;charset=utf8;dbname=member";
-$pdo=new PDO($dsn,'root','');
+$dsn = "mysql:host=localhost;charset=utf8;dbname=member";
+$pdo = new PDO($dsn, 'root', '');
 // SESSION傳值開始
 session_start();
 // 在connect 中建立常用的crud 自訂函式
@@ -127,4 +127,3 @@ function dd($array)
     print_r($array);
     echo "</pre>";
 }
-?>
