@@ -63,7 +63,7 @@ include_once "./include/connect.php";
         // $user = $pdo->query($sql)->fetch();
 
         // 用使用者帳號(前提是帳號不能重複)找到資料陣列帶入，member的資料自動帶入input
-        $user=find('users',['acc'=>"{$_SESSION['users']}"]);
+        $user=find('users',['acc'=>"{$_SESSION['user']}"]);
 
         ?>
 

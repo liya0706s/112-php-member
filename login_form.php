@@ -39,7 +39,7 @@
                 </div>
                 <div class="text-center">
                     <input type="submit" value="送出" class="btn btn-primary mx-2">
-                    <input type="submit" value="重置" class="btn btn-warning mx-2">
+                    <input type="reset" value="重置" class="btn btn-warning mx-2">
                 </div>
             </form>
         </div>
