@@ -2,10 +2,11 @@
 
 include_once "../include/connect.php";
 
-$sql="delete from `users` where `id`='{$_GET['id']}'";
+// $sql="delete from `users` where `id`='{$_GET['id']}'";
 // input消失吧的onclick取得的使用者id
+// $pdo->exec($sql);
 
-$pdo->exec($sql);
+del("users",$_GET['id']);
 
 unset($_SESSION['user']);
 

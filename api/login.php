@@ -18,6 +18,14 @@ $pw=$_POST['pw'];
 // count(*)代表有取得符合的資料數量為1
 $sql="select count(*) from users where `acc`='$acc' && `pw`='$pw'";
 
+// 跟我們自訂的find()很像
+// 確認一下有無內建函式 count()函式
+// Count all elements in an array, or something in an object
+
+
+$sql="select count(*) from users where `acc`='$acc' && `pw`='$pw'";
+
+
 // 輸入帳密，會拿到一筆資料fetch()
 // PDO查詢和取得的資料，放到變數$user裡
 // $user=$pdo->query($sql)->fetch();

@@ -59,8 +59,12 @@ include_once "./include/connect.php";
         // 確定註冊時的帳號是不能重複的
         // 會員中心不是透過表單傳帳號過來的；
         // 是從資料庫撈資料比較，登入後登入者帳號儲存在SESSION變數裡
-        $sql = "select * from users where `acc`='{$_SESSION['user']}'";
-        $user = $pdo->query($sql)->fetch();
+        // $sql = "select * from users where `acc`='{$_SESSION['user']}'";
+        // $user = $pdo->query($sql)->fetch();
+
+        // 用使用者帳號(前提是帳號不能重複)找到資料陣列帶入，member的資料自動帶入input
+        $user=find('users',['acc'=>"{$_SESSION['users']}"]);
+
         ?>
 
         <!-- 顯示 資料庫中撈到登入者資料的陣列，有id -->

@@ -29,6 +29,10 @@ function all($table = null, $where = '', $other = '')
         $sql .= $other;
         //echo 'all=>'.$sql;
         $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+        // fetch回來的資料會是陣列形式
+        // 例如:$res=['count("id")'=>'12'];
+        // echo $res['count("id")'];
+
         return $rows;
     } else {
         echo "錯誤:沒有指定的資料表名稱";
