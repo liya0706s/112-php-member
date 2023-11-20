@@ -1,6 +1,9 @@
 <?php
 // 放在最前面
-include_once "./include/connect.php";
+include_once "../include/connect.php";
+
+// 檔案位置 ./ 當前路徑
+// 檔案位置 ../ 上一層
 
 // retrieve from login_form.php
 $acc=$_POST['acc'];
@@ -31,9 +34,10 @@ if($user==1){
     // 把acc帳號放到SESSION裡面(右邊賦予給左邊)
     // 到會員資料那邊會繼續使用 $_SESSION['user'] 變數
     $_SESSION['user']=$acc;
-    header("location:index.php");
+    header("location:../index.php");
 }else{
     // 回登入頁，出現錯誤訊息用GET網頁傳值方法就可以
     // ?後面 error=xxxx就是get會出現的內容
-    header('location:login_form.php?error=帳號密碼錯誤');
+    header('location:../login_form.php?error=帳號密碼錯誤');
+    // 回到上一層的login_form
 }

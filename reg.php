@@ -13,7 +13,7 @@
 <body>
     <a href="./index.php">HOME</a>
     <h2 class="text-center mt-3 mb-3">會員註冊</h2>
-    <form action="./add_user.php" method="post">
+    <form action="./api/add_user.php" method="post">
         <div class="col-4 m-auto">
             <div class="input-group my-1">
                 <label class="col-4 input-group-text">帳號:</label>

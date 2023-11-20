@@ -29,7 +29,7 @@ include_once "./include/connect.php";
             <?php
             if (isset($_SESSION['user'])) {
                 echo "歡迎光臨 " . $_SESSION['user'];
-                echo "<a href='logout.php' class='btn btn-info mx-2'>登出</a>";
+                echo "<a href='./api/logout.php' class='btn btn-info mx-2'>登出</a>";
                 echo "<a href='member.php' class='btn btn-success mx-2'>會員中心</a>";
             } else {
             ?>
@@ -73,7 +73,7 @@ include_once "./include/connect.php";
         <!-- 會員資料的表單會action到update.php -->
         <!-- 所有要更新的資料，包含id因為要條件哪一筆(id)更新 -->
         <!-- update.php網頁按F12>payload，會有這裡傳送過去的form data -->
-        <form action="update.php" method="post">
+        <form action="./api/update.php" method="post">
             <div class="col-4 m-auto">
                 <div class="input-group my-1">
                     <label class="col-4 input-group-text">帳號:</label>
@@ -107,7 +107,7 @@ include_once "./include/connect.php";
                     <!-- submit一定觸發form表單觸發value傳送 -->
                     <input class="btn btn-warning mx-2" type="reset" value="重置">
                     <!-- reset恢復原狀或"還原"，非清空 -->
-                    <input class="btn btn-danger mx-2" type="button" value="讓我消失吧" onclick="location.href='del_user.php?id=<?= $user['id']; ?>'">
+                    <input class="btn btn-danger mx-2" type="button" value="讓我消失吧" onclick="location.href='./api/del_user.php?id=<?= $user['id']; ?>'">
                     <!-- 比較:屬性button只是按鈕外型，沒有功能；在form表單裡放button標籤，預設是submit -->
                     <!-- 表單裡面不能包表單，所以把消失表單POST的按鈕放在這個表外面，用GET/POST有?id=xx帶到del_user -->
 

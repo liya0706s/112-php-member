@@ -1,6 +1,6 @@
 <?php
 
-include_once "./include/connect.php";
+include_once "../include/connect.php";
 
 // 資料清洗先省略，但是工作時需要核對表單內容檢查
 
@@ -26,4 +26,4 @@ if($pdo->exec($sql)>0){
 // 判斷為1代表有更新資訊
 
 // 更新完回會員中心
-header("location:member.php");
+header("location:../member.php");

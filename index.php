@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php include_once "./include/connect.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +30,7 @@
                     // 登入成功，歡迎光臨 登入者帳號
                     echo "歡迎光臨 " . $_SESSION['user'];
                     // 登入成功的完整按鈕選項還有，登出和會員資料
-                    echo "<a href='logout.php' class='btn btn-info mx-2'>登出</a>";
+                    echo "<a href='./api/logout.php' class='btn btn-info mx-2'>登出</a>";
                     echo "<a href='member.php' class='btn btn-success mx-2'>會員中心</a>";
                 } else {
                     // 如果不是登入成功，會看到 註冊 跟 登入 按鈕
