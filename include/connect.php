@@ -1,11 +1,8 @@
 <?php
-// 資料庫連線
+date_default_timezone_set('Asia/Taipei');
 $dsn = "mysql:host=localhost;charset=utf8;dbname=member";
 $pdo = new PDO($dsn, 'root', '');
-// SESSION傳值開始
 session_start();
-// 在connect 中建立常用的crud 自訂函式
-date_default_timezone_set('Asia/Taipei');
 
 function all($table = null, $where = '', $other = '')
 {
@@ -27,18 +24,33 @@ function all($table = null, $where = '', $other = '')
         }
 
         $sql .= $other;
-        //echo 'all=>'.$sql;
+        echo 'all=>'.$sql;
         $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-        // fetch回來的資料會是陣列形式
-        // 例如:$res=['count("id")'=>'12'];
-        // echo $res['count("id")'];
-
         return $rows;
     } else {
         echo "錯誤:沒有指定的資料表名稱";
     }
 }
 
+// ...這邊是11/23嗎，怎麼沒有聽到?
+function total($table, $id){
+    global $pdo;
+    $sql = "select count(`id`) from `$table` ";
+
+    if (is_array($id)){
+        foreach ($id as $col => $value){
+            $tmp[]= "`$col`='$value'";
+        }
+        $sql .= " where " . join(" && ", $tmp);
+    }elseif(is_numeric($id)){
+        $sql .= " where `id`='$id'";
+    }else{
+        echo "錯誤:參數的資料型態必須是數字或陣列";
+    }
+    // echo 'find=>'.$sql;
+    $row=$pdo->query($sql)->fetchColumn();
+    return $row;
+}
 
 function find($table, $id)
 {
@@ -131,3 +143,5 @@ function dd($array)
     print_r($array);
     echo "</pre>";
 }
+
+?>
