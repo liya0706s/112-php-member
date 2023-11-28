@@ -10,7 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body class="container">
+    <?php include "./include/header.php"; ?>
     <a href="./index.php">HOME</a>
     <h2 class="text-center mt-3 mb-3">會員註冊</h2>
     <form action="./api/add_user.php" method="post">
@@ -18,7 +19,7 @@
             <div class="input-group my-1">
                 <label class="col-4 input-group-text">帳號:</label>
                 <input class="form-control" type="text" name="acc" id="acc">
-            <!-- name="acc" 就是form表單到add_user.php 傳值 $_POST['acc'] -->
+                <!-- name="acc" 就是form表單到add_user.php 傳值 $_POST['acc'] -->
             </div>
             <div class="input-group my-1">
                 <label class="col-4 input-group-text" for="">密碼:</label>

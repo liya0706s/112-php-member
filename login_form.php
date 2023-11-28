@@ -15,6 +15,7 @@
 
 <body>
     <div class="container">
+    <?php include "./include/header.php"; ?>
         <div class="w-50 mx-auto">
             <h2>會員登入</h2>
             <form action="./api/login.php" method="post">
