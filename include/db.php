@@ -3,7 +3,7 @@ date_default_timezone_set("Asia/Taipei");
 session_start();
 class DB{
 
-    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=school";
+    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=member";
     protected $pdo;
     protected $table;
 
@@ -117,13 +117,11 @@ class DB{
             echo "錯誤:參數的資料型態比須是數字或陣列";
         }
         //echo $sql;
-    
         return $this->pdo->exec($sql);
     }
     
     function q($sql){
         return $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-
     }
 
     private function a2s($array){
@@ -141,9 +139,6 @@ function dd($array)
     echo "</pre>";
 }
 
-
-$student=new DB('students');
-$rows=$student->count();
-dd($rows);
+$User=new DB('users');
 
 ?>

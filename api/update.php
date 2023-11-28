@@ -28,12 +28,5 @@ $res=update('users',"{$_POST['id']}", ['acc'=>"{$_POST['acc']}",
 // 有更新一筆資料，成功的話會回傳1
 // SESSION資料會存在server
 // 如果只為了這一次更新暫存判斷使用，使用完要刪除
-// if($pdo->exec($sql)>0){
-//     $_SESSION['msg']="更新成功!";
-// }else{
-//     $_SESSION['msg']="資料無異動";
-// }
-// 判斷為1代表有更新資訊
 
-// 更新完回會員中心
 header("location:../member.php");
